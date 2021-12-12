@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "491290238127",
+    "project_id": "fir-notification-554d4",
+    "storage_bucket": "fir-notification-554d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491290238127:android:c48881d9923e9ce01a885a",
+        "android_client_info": {
+          "package_name": "com.nntmapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "491290238127-fatka0qh8f3urb8sdqtfm58kog4drkp7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkez2asagsT76oLC3k4S-o1EsY8L18tt4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "491290238127-fatka0qh8f3urb8sdqtfm58kog4drkp7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
