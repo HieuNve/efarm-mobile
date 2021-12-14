@@ -16,6 +16,7 @@ export default () => (dispatch) => {
         type: GET_CONTROL_SUCCESS,
         payload: res.data.data,
       });
+      console.log("data.taa", res.data.data)
     })
     .catch((err) => {
       dispatch({

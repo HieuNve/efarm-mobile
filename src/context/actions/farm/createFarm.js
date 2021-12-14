@@ -23,9 +23,10 @@ export default (form) => (dispatch) => (onSuccess) => {
     .then((res) => {
       dispatch({
         type: CREATE_FARMS_SUCCESS,
-        payload: res.data,
+        payload: res.data.data,
       });
       onSuccess();
+      console.log('Create Farm', res.data.data)
     })
     .catch((err) => {
       dispatch({

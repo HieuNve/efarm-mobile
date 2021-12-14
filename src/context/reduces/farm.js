@@ -27,12 +27,12 @@ const farms = (state, { type, payload }) => {
           data: payload,
           error: null,
         },
-        // getFarm: {
-        //     ...state.getFarm,
-        //     loading: false,
-        //     data: [payload, ...state.getFarm.data],
-        //     error: null,
-        // },
+        getFarm: {
+          ...state.getFarm,
+          loading: false,
+          data: [payload, ...state.getFarm.data],
+          error: null,
+        },
       };
     case CREATE_FARMS_FAIL:
       return {

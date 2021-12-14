@@ -21,10 +21,11 @@ const Home = () => {
   const {
     farmDispatch,
     farmState: {
-      getFarm: { data },
+      getFarm: { data, loading },
     },
   } = useContext(GlobalContext);
-
+  console.log("Check xem nó có chạy vào hay không...", "Check xem nó có chạy vào hay kông");
+  console.log("data trong thằng home", data);
   useEffect(() => {
     getData();
     getFarm()({ dataUuid })(farmDispatch);
@@ -32,7 +33,8 @@ const Home = () => {
 
   return (
     <HomeComponent
-      data={data.data}
+      data={data}
+      loading={loading}
     />
   );
 };

@@ -6,10 +6,9 @@ import {
 import axios from '../../../helpers/axiosInterceptor';
 
 export default form => dispatch => {
-  console.log('formádasdasdasdasd: ', form.relay1);
   const requesPayload = {
     relay1: form.relay1,
-    relay2: form.relay2 || undefined,
+    relay2: form.relay2,
     relay3: form.relay3 || undefined,
     relay4: form.relay4 || undefined,
     controlID: 1 || '',
@@ -25,14 +24,16 @@ export default form => dispatch => {
         type: SET_CONTROL_SUCCESS,
         payload: res.data,
       });
+
     })
+
     .catch(err => {
       console.log('errors: ', err);
       dispatch({
         type: SET_CONTROL_FAIL,
         payload: err.response
           ? err.response.data
-          : {error: 'some thing went wrong, try again'},
+          : { error: 'some thing went wrong, try again' },
       });
     });
 };

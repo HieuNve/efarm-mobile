@@ -7,7 +7,7 @@ import {
   SET_CONTROL_SUCCESS,
 } from '../../constants/actionTypes';
 
-const control = (state, {type, payload}) => {
+const control = (state, { type, payload }) => {
   switch (type) {
     case SET_CONTROL_LOADING:
       return {
@@ -27,11 +27,11 @@ const control = (state, {type, payload}) => {
           data: payload,
           error: null,
         },
-        // getFarm: {
-        //     ...state.getFarm,
-        //     loading: false,
-        //     data: [payload, ...state.getFarm.data],
-        //     error: null,
+        // getValueControl: {
+        //   ...state.getValueControl,
+        //   loading: false,
+        //   data: [payload, ...state.getValueControl.data],
+        //   error: null,
         // },
       };
     case SET_CONTROL_FAIL:

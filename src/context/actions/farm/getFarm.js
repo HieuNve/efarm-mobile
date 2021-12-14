@@ -13,8 +13,9 @@ export default () => (dataUuid) => (dispatch) => {
     .then((res) => {
       dispatch({
         type: GET_FARMS_SUCCESS,
-        payload: res.data,
+        payload: res.data.data,
       });
+      console.log('res.datasdfsdfs', res.data.data);
     })
     .catch((err) => {
       dispatch({

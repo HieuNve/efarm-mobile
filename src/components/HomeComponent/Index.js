@@ -7,6 +7,7 @@ import {
   StatusBar,
   Image,
   StyleSheet,
+  ActivityIndicator,
   Alert,
 } from "react-native";
 import styles from "./styles";
@@ -31,8 +32,7 @@ const HomeComponent = ({ data, loading, setModalVisible }) => {
         style={styles.itemContainer}
         onPress={() => {
           navigate(FARM_DETAIL, { item });
-        }}
-      >
+        }}>
         <View style={styles.item}>
           <Text style={styles.name}>Tên: {item.farmName}</Text>
           <Text style={styles.location}>Địa Điểm: {item.location}</Text>
@@ -60,16 +60,25 @@ const HomeComponent = ({ data, loading, setModalVisible }) => {
       >
         <Text style={styles.textFarm}>Thêm Vườn</Text>
       </TouchableOpacity>
-      <FlatList
-        renderItem={renderItem}
-        data={data}
-        keyExtractor={(item) => String(item.farmID)}
-        contentContainerStyle={{
-          padding: 10,
-          paddingTop: StatusBar.currentHeight || 43,
-        }}
-        ListEmptyComponent={ListEmptyComponent}
-      />
+      {loading && (
+        <View style={{ paddingVertical: 100, paddingHorizontal: 100 }}>
+          <ActivityIndicator color={colors.primary} size="large" />
+        </View>
+      )}
+      {!loading && (
+        <View style={{ paddingVertical: 20 }}>
+          <FlatList
+            renderItem={renderItem}
+            data={data}
+            keyExtractor={(item) => String(item.farmID)}
+            contentContainerStyle={{
+              padding: 10,
+              paddingTop: StatusBar.currentHeight || 43,
+            }}
+            ListEmptyComponent={ListEmptyComponent}
+          />
+        </View>
+      )}
     </View>
   );
 };

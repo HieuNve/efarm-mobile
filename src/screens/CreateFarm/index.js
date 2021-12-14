@@ -12,7 +12,8 @@ const CreateFarm = () => {
 
   const {
     farmDispatch,
-    farmState: { error, loading, data },
+    farmState: {
+      createFarm: { error, loading } },
   } = useContext(GlobalContext);
 
   const onChange = ({ name, value }) => {
