@@ -1,15 +1,15 @@
-import {useNavigation} from '@react-navigation/core';
+import { useNavigation } from '@react-navigation/core';
 import React from 'react';
-import {View, Text, Image} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import {CONTROLLER, DEVICE, HOME} from '../../constants/routeName';
+import { View, Text, Image } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { CONTROLLER, DEVICE, HOME } from '../../constants/routeName';
 import CustomTouchableOpacy from '../Common/CustomTouchableOpacy';
 import styles from './styles';
 
-const FarmDetailComponent = ({item}) => {
-  const {navigate} = useNavigation();
+const FarmDetailComponent = ({ item }) => {
+  const { navigate } = useNavigation();
   return (
-    <View style={{flex: 1}}>
+    <View style={{ flex: 1 }}>
       <View style={styles.name}>
         <Image
           style={styles.logo}
@@ -33,14 +33,19 @@ const FarmDetailComponent = ({item}) => {
           style={{
             flex: 1,
             margin: 5,
-            shadowColor: '#470000',
-            shadowOffset: {width: 0, height: 1},
-            shadowOpacity: 0.2,
+            backgroundColor: 'rgba(255,255, 255, 0.7)',
+            shadowOffset: {
+              width: 0,
+              height: 10,
+            },
+            marginTop: 5,
+            shadowOpacity: 0.5,
+            paddingVertical: 20,
             elevation: 1,
           }}
           title={'NHẬT KÍ MÔI TRƯỜNG'}
           onPress={() => {
-            navigate(DEVICE, {item});
+            navigate(DEVICE, { item });
           }}
           background
           link={require('../../assets/theme/images/cloudy.png')}
@@ -49,16 +54,21 @@ const FarmDetailComponent = ({item}) => {
           style={{
             flex: 1,
             margin: 5,
-            shadowColor: '#470000',
-            shadowOffset: {width: 0, height: 1},
-            shadowOpacity: 0.2,
+            backgroundColor: 'rgba(255,255, 255, 0.7)',
+            shadowOffset: {
+              width: 0,
+              height: 10,
+            },
+            marginTop: 5,
+            shadowOpacity: 0.5,
+            paddingVertical: 20,
             elevation: 1,
           }}
           title={'ĐIỀU KHIỂN'}
           background
           link={require('../../assets/theme/images/settings.png')}
           onPress={() => {
-            navigate(CONTROLLER, {item});
+            navigate(CONTROLLER, { item });
           }}
         />
       </View>
@@ -73,9 +83,13 @@ const FarmDetailComponent = ({item}) => {
             flex: 1,
             margin: 5,
             height: 50,
-            shadowColor: '#470000',
-            shadowOffset: {width: 0, height: 1},
-            shadowOpacity: 0.2,
+            backgroundColor: 'rgba(255,255, 255, 0.7)',
+            shadowOffset: {
+              width: 0,
+              height: 10,
+            },
+            marginTop: 5,
+            shadowOpacity: 0.5,
             elevation: 1,
           }}
           title={'QUY TRÌNH'}
@@ -86,12 +100,16 @@ const FarmDetailComponent = ({item}) => {
             flex: 1,
             margin: 5,
             height: 50,
-            shadowColor: '#470000',
-            shadowOffset: {width: 0, height: 1},
-            shadowOpacity: 0.2,
+            backgroundColor: 'rgba(255,255, 255, 0.7)',
+            shadowOffset: {
+              width: 0,
+              height: 10,
+            },
+            marginTop: 5,
+            shadowOpacity: 0.5,
             elevation: 1,
           }}
-          title={'KẾT THÚC MÙA VỤ'}
+          title={'KẾT THÚC'}
         />
       </View>
       <View
@@ -105,14 +123,19 @@ const FarmDetailComponent = ({item}) => {
             flex: 1,
             margin: 5,
             height: 50,
-            shadowColor: '#470000',
-            shadowOffset: {width: 0, height: 1},
-            shadowOpacity: 0.2,
+            backgroundColor: 'rgba(255,255, 255, 0.7)',
+            shadowOffset: {
+              width: 0,
+              height: 10,
+            },
+            marginTop: 5,
+            shadowOpacity: 0.5,
+
             elevation: 1,
           }}
           title={'DANH SÁCH VƯỜN'}
           onPress={() => {
-            navigate(HOME, {item});
+            navigate(HOME, { item });
           }}
         />
       </View>

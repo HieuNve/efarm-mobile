@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Switch,
@@ -39,7 +39,7 @@ const ControllerComponent = ({
       )} */}
 
       {!loading && (
-        <View style={{flex: 1, paddingVertical: 20}}>
+        <View style={{ flex: 1, paddingVertical: 20 }}>
           <View style={styles.deviceWrapper}>
             <View style={styles.device}>
               <Image
@@ -58,15 +58,15 @@ const ControllerComponent = ({
                 Máy bơm
               </Text>
               <Switch
-                style={{transform: [{scaleX: 1.5}, {scaleY: 1.5}]}}
-                trackColor={{false: '#767577', true: '#81b0ff'}}
+                style={{ transform: [{ scaleX: 1.5 }, { scaleY: 1.5 }] }}
+                trackColor={{ false: '#767577', true: '#81b0ff' }}
                 thumbColor={form.relay1 ? '#f5dd4b' : '#f4f3f4'}
                 onValueChange={value => {
                   setValue(previousState => !previousState);
-                  toggleValueChange({name: 'relay1', value: value});
+                  toggleValueChange({ name: 'relay1', value: value });
                 }}
                 value={form.relay1}
-                // value={value == 1 ? true : false}
+
               />
             </View>
           </View>
@@ -88,17 +88,17 @@ const ControllerComponent = ({
                 Đèn
               </Text>
               <Switch
-                style={{transform: [{scaleX: 1.5}, {scaleY: 1.5}]}}
-                trackColor={{false: '#767577', true: '#81b0ff'}}
+                style={{ transform: [{ scaleX: 1.5 }, { scaleY: 1.5 }] }}
+                trackColor={{ false: '#767577', true: '#81b0ff' }}
                 thumbColor={form.relay2 ? '#f5dd4b' : '#f4f3f4'}
                 onValueChange={value => {
-                  toggleValueChange({name: 'relay2', value: value});
+                  toggleValueChange({ name: 'relay2', value: value });
                 }}
                 value={form.relay2}
               />
             </View>
           </View>
-          {/* <View style={styles.ledWrapper}></View> */}
+
 
           <TouchableOpacity
             onPress={onSubmit}

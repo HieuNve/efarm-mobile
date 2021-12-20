@@ -2,23 +2,19 @@ import React from 'react';
 import {
   View,
   Text,
-  SafeAreaView,
-  FlatList,
-  StyleSheet,
-  StatusBar,
   Image,
   useWindowDimensions,
-  ScrollView,
-  ImageBackground,
+  ActivityIndicator,
 } from 'react-native';
 import DeviceCustom from '../Common/DeviceCustom';
 import Icon from '../../components/Common/Icons';
 import colors from '../../assets/theme/colors';
 import styles from './styles';
-const DeviceComponent = ({data}) => {
-  const {width: windowWidth, height: windowHeight} = useWindowDimensions();
+const DeviceComponent = ({ data, loading }) => {
+  const { width: windowWidth, height: windowHeight } = useWindowDimensions();
   return (
-    <View style={{flex: 1, backgroundColor: '#F8F9F9'}}>
+    <View style={{ flex: 1, backgroundColor: '#F8F9F9' }}>
+
       {data && Object.keys(data).length !== 0 ? (
         <View
           style={{
@@ -38,10 +34,10 @@ const DeviceComponent = ({data}) => {
                 height: 100,
                 width: 100,
               }}
-              // style={StyleSheet.absoluteFillObject}
+            // style={StyleSheet.absoluteFillObject}
             />
           </View>
-          <View style={{flex: 1}}>
+          <View style={{ flex: 1 }}>
             <DeviceCustom
               title={'Nhiệt độ môi trường'}
               value={data[0].temperature + '  °C'}

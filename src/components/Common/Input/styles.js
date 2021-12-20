@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import colors from '../../../assets/theme/colors';
 
 export default StyleSheet.create({
@@ -8,7 +8,6 @@ export default StyleSheet.create({
     borderRadius: 4,
     flexDirection: 'row',
     paddingHorizontal: 5,
-
     marginTop: 5,
   },
 

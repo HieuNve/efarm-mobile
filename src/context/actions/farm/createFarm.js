@@ -4,17 +4,18 @@ import {
   CREATE_FARMS_SUCCESS,
 } from "../../../constants/actionTypes";
 import axios from "../../../helpers/axiosInterceptor";
-export default (form) => (dispatch) => (onSuccess) => {
+export default (form) => (uuid) => (dispatch) => (onSuccess) => {
   const requesPayload = {
     farmName: form.farmName,
     location: form.location || "",
     timeStart: form.timeStart || "",
     timeFinish: form.timeFinish || "",
     area: form.area || "",
-    personID: form.personID,
+    personID: uuid,
     deviceID: form.deviceID,
     treeID: form.treeID,
   };
+  console.log('personID', personID);
   dispatch({
     type: CREATE_FARMS_LOADING,
   });
@@ -25,6 +26,7 @@ export default (form) => (dispatch) => (onSuccess) => {
         type: CREATE_FARMS_SUCCESS,
         payload: res.data.data,
       });
+
       onSuccess();
       console.log('Create Farm', res.data.data)
     })

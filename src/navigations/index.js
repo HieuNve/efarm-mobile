@@ -1,17 +1,17 @@
-import React, {useContext, useState, useEffect} from 'react';
-import {} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
+import React, { useContext, useState, useEffect } from 'react';
+import { } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 import DrawerNavigator from './DrawerNavigator';
 import AuthNavigator from './AuthNavigator';
-import {GlobalContext} from '../context/Provider';
+import { GlobalContext } from '../context/Provider';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import navigationRef from './SlideMenu/RootNaivgator';
-import {ActivityIndicator} from 'react-native';
+import { ActivityIndicator } from 'react-native';
 import firebase from '@react-native-firebase/app';
 import messaging from '@react-native-firebase/messaging';
 const AppNavContainer = () => {
   const {
-    authState: {isLoggedIn},
+    authState: { isLoggedIn },
   } = useContext(GlobalContext);
   const [isAuthenticated, setIsAuthenticated] = useState(isLoggedIn);
   const [authLoaded, setAuthLoaded] = React.useState(false);
@@ -19,6 +19,7 @@ const AppNavContainer = () => {
     try {
       const user = await AsyncStorage.getItem('user');
       const uuid = await AsyncStorage.getItem('uuid');
+      console.log(uuid);
       if (user && uuid) {
         setAuthLoaded(true);
         setIsAuthenticated(true);
@@ -26,7 +27,7 @@ const AppNavContainer = () => {
         setAuthLoaded(true);
         setIsAuthenticated(false);
       }
-    } catch (err) {}
+    } catch (err) { }
   };
   useEffect(() => {
     getUser();
