@@ -1,0 +1,15 @@
+import React from 'react';
+import {View, Text} from 'react-native';
+import styles from './styles';
+
+const DeviceCustom = ({title, icon, value, unit}) => {
+  return (
+    <View style={styles.item}>
+      <View>{icon && icon}</View>
+      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.value}>{value}</Text>
+      <Text style={styles.title}>{unit}</Text>
+    </View>
+  );
+};
+export default DeviceCustom;
