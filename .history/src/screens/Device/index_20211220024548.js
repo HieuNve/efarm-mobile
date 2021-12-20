@@ -13,13 +13,10 @@ const Device = () => {
       getDevice: {data},
     },
   } = useContext(GlobalContext);
-  console.log('Dữ liệu của Device: ', data.length);
-  setTimeout(() => {
-    console.log('Check', 'Check minis');
-  }, 1000);
+  console.log('Dữ liệu của Device: ', data);
   useEffect(() => {
     getDevice()({deviceID})(deviceDispatch);
-  }, []);
+  }, [deviceState]);
   return <DeviceComponent data={data} />;
 };
 export default Device;

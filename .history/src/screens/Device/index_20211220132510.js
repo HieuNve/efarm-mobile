@@ -14,9 +14,9 @@ const Device = () => {
     },
   } = useContext(GlobalContext);
   console.log('Dữ liệu của Device: ', data.length);
-  setTimeout(() => {
+  setTimeout(function () {
     console.log('Check', 'Check minis');
-  }, 1000);
+  }, 2);
   useEffect(() => {
     getDevice()({deviceID})(deviceDispatch);
   }, []);
